@@ -6,22 +6,9 @@ public class GuessingGameEdit {
 
 		GuessingGameEdit myGGE = new GuessingGameEdit();
 		myGGE.playGame();
-
-		System.out.println("Do you want to play again?");
-		System.out.println("Y = yes N = no");
-		String ans = myToolbox.readStringFromCmd();
-		System.out.println(ans);
+		myGGE.endGame();
 
 
-		if (ans == "N" || ans == "n"){
-			System.out.println("Goodbye!");
-			System.exit(0);
-		} else if (ans == "Y" || ans == "y"){
-			GuessingGameEdit myGGE1 = new GuessingGameEdit();
-			myGGE1.playGame();
-		} else {
-			System.out.println("Y = yes N = no");
-		}
 
 	}
 
@@ -61,4 +48,27 @@ public class GuessingGameEdit {
 
 	}
 
+	public void endGame(){
+
+		Toolbox myToolbox = new Toolbox();
+		GuessingGameEdit myGGE = new GuessingGameEdit();
+
+		System.out.println("Do you want to play again?");
+		System.out.println("Y = yes N = no");
+		String ans = myToolbox.readStringFromCmd();
+
+
+		if (ans.equals("N") || ans.equals("n")){
+			System.out.println("Goodbye!");
+			System.exit(0);
+		} else if (ans.equals("Y") || ans.equals("y")){
+			myGGE.playGame();
+			myGGE.endGame();
+		} else {
+			myGGE.endGame();
+		}
+
+	}
+
 }
+
