@@ -13,7 +13,7 @@ public class GuessingGameEdit {
 		System.out.println(ans);
 
 
-		if (ans != "N" || ans == "n"){
+		if (ans == "N" || ans == "n"){
 			System.out.println("Goodbye!");
 			System.exit(0);
 		} else if (ans == "Y" || ans == "y"){
